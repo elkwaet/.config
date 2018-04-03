@@ -1,0 +1,260 @@
+# Ce fichier a été auto-généré par i3-config-wiazrd(1). Il ne sera pas écrasé, vous pouvez 
+# donc le modifier à votre guise.
+#
+# Si vous devez changer de configuration de clavier (azerty <=> qwerty), effacez ce 
+# fichier et relancez: i3-config-wizard(1).
+#
+# Quand vous modifier/ajouter un parametre, vous n'avez pas besoin de redémarer votre 
+# systeme/session. Faites juste la combinaison "SUPER SHIFT R" juste apès avoir 
+# fermé/enrégistré ce fichier.
+
+# Tous les parametres possibles pour i3: http://i3wm.org/docs/userguide.html
+#
+# À noter également que "mod"=Modificateur. Il peut être réglé soit sur la touche 
+# SUPER,soit sur la touche ALT
+#
+# Définition de Mod4 (touche Super ou Windows) en tant que modificateur principal:
+set $mod Mod4
+
+# Définition de Alt en tant que modificateur secondaire (pour mes raccourcis):
+set $alt Mod1
+
+# police des titres de fenêtres. ISO 10646 = Unicode
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# Utilisation de la souris+$mod pour déplacer les fenêtres flottantes:
+floating_modifier $mod
+
+# Lancer un émulateur de terminal : ici, j'active par défaut Gnome-Terminal; Vous bindsym 
+bindsym $mod+Return exec gnome-terminal
+#$mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec xterm
+#bindsym $mod+Shift+A exec termit
+#bindsym $mod+Return exec termit
+
+# Fermer (tuer) la fenêtre ayant le focus (la fenêtre active):
+bindsym $mod+Shift+Q kill
+
+# Démarrer le lanceur de menu 'dmenu' (paquet suckless-tools)
+#bindsym $mod+d exec dmenu_run
+# Démarrer le lanceur de menu 'rofi' (paquet rofi), subtitue de DMenu
+bindsym $mod+d exec rofi -show run
+
+# Déplacer le focus entre les fenêtres avec J-K-L-M:
+	# DÉSACTIVATION DE LA FONCTION CLAVIER ALPHABETIQUE POUR
+        # PRIVILÉGIER LES TOUCHES DIRECTIONNELLES
+	##bindsym $mod+j focus left
+	##bindsym $mod+k focus down
+	##bindsym $mod+l focus up
+	##bindsym $mod+m focus right
+
+# ou avec les touches directionnelles (fléchées):
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Déplacer la fenêtre active avec J-K-L-M:
+	# DÉSACTIVATION DE LA FONCTION CLAVIER ALPHABETIQUE POUR
+	# PRIVILÉGIER LES TOUCHES DIRECTIONNELLES
+	##bindsym $mod+Shift+J move left
+	##bindsym $mod+Shift+K move down
+	##bindsym $mod+Shift+L move up
+	##bindsym $mod+Shift+M move right
+
+# ou avec les touches directionnelles (fléchées):
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Activer la division horizontale de la fenêtre active (ex: mod+h suivi de mod+Entrée crée 
+# un nouveau terminal à côté du premier)
+bindsym $mod+h split h
+
+# Activer la division verticale de la fenêtre active (ex: mod+v suivi de mod+Entrée crée 
+# un nouveau terminal sous le premier)
+bindsym $mod+v split v
+
+# Passer en PLEIN ÉCRAN la fenêtre active
+bindsym $mod+f fullscreen
+
+# Changer le mode d'affichage des containers avec S-Z-E: stacked: fenêtres maximisées, barres de 
+# titre des fenetres ouvertes empilées, tabbed: fenêtres maximisées, barres de titre des 
+# fenetres ouvertes les unes à côtés des autres, comme des onglets, default: tiling 
+# (pavage).
+bindsym $mod+s layout stacking
+bindsym $mod+z layout tabbed
+bindsym $mod+e layout default
+
+# Alterner l'affichage de la fenêtre active entre flottant et tiling:
+bindsym $mod+Shift+space floating toggle
+
+# Alterner le focus entre les fenêtres en tiling et celle(s) flottante(s) :
+bindsym $mod+space focus mode_toggle
+
+# Donner le focus au container père:
+bindsym $mod+q focus parent
+
+# Donner le focus au container fils:
+#bindsym $mod+d focus child
+
+# Se déplacer entre les espaces de travail ouverts (avec la numérotation horizontale du 
+# clavier; pas avec le clavier numérique même s'il existait)
+bindsym $mod+ampersand workspace 1
+bindsym $mod+eacute workspace 2
+bindsym $mod+quotedbl workspace 3
+bindsym $mod+apostrophe workspace 4
+bindsym $mod+parenleft workspace 5
+bindsym $mod+minus workspace 6
+bindsym $mod+egrave workspace 7
+bindsym $mod+underscore workspace 8
+bindsym $mod+ccedilla workspace 9
+bindsym $mod+agrave workspace 10
+
+# Déplacer la fenêtre active vers un espace de travail spécifique:
+bindsym $mod+Shift+ampersand move container to workspace 1
+bindsym $mod+Shift+eacute move container to workspace 2
+bindsym $mod+Shift+quotedbl move container to workspace 3
+bindsym $mod+Shift+apostrophe move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# Recharger la configuration d'i3 (relecture du présent fichier, ne nécessite pas de 
+# redémarrage d'i3):
+bindsym $mod+Shift+C reload
+
+# Redémarrer i3 sur place (conserve la session et l'organisation actuelle, peut être 
+# utiliser pour une mise à jour d'i3)
+bindsym $mod+Shift+R restart
+
+# Quitter i3 (met fin à votre session X, équivalent d'un $pkill -u $USER):
+bindsym $mod+Shift+E exit
+
+# Redimensionner la fenêtre (la souris peut aussi être utilisée):
+mode "resize" {
+        # Ces raccourcis fonctionnent dès l'entrée en mode "resize"
+
+        # j pour réduire la largeur de 10
+        # m pour agrandir la largeur de 10
+        # k pour agrandir la hauteur de 10
+        # l pour réduire la hauteur de 10
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym m resize grow width 10 px or 10 ppt
+
+        # idem mais avec les touches fléchées
+        bindsym 113 resize shrink width 10 px or 10 ppt
+        bindsym 116 resize grow height 10 px or 10 ppt
+        bindsym 111 resize shrink height 10 px or 10 ppt
+        bindsym 114 resize grow width 10 px or 10 ppt
+
+        # Entrée ou Echap pour revenir en mode normal
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# i3bar permet l'affichage des espaces de travail (si i3status est disponible, des infos 
+# systèmes sont affichées)
+bar {
+        # démarrer i3status dans i3bar
+        status_command i3status
+        # position de la barre (top | bottom)
+	position top
+        # le system-tray reste sur l'écran principal
+	tray_output primary
+
+# définition des couleurs des noms d'espaces de travail dans i3bar:
+	colors {
+#				  <bordure> <arrière plan> <texte>
+		focused_workspace #FF00FF   #111111         #00FF00
+# définition de la couleur de police de i3status:
+		statusline	  #EEEEEE
+
+		}
+}
+
+##############################
+## Début de ma config perso ##
+##############################
+
+# Le focus ne suit pas la souris (évite le coup de paume sur le touchpad)
+focus_follows_mouse no
+
+# Lors du passage à un workspace, retaper le raccourci de ce workspace ramène à celui dont 
+# je viens
+workspace_auto_back_and_forth yes
+
+# Comportement des nouveaux containers (tabbed | stack | default ie tiled)
+workspace_layout default
+
+# Bordure des nouvelles fenêtres (normal | none | 1pixel | pixel n)
+# fenêtres normales:
+new_window 1pixel
+# fenêtres flottantes:
+new_float normal
+
+# Assignation des logiciels à un espace:
+assign [class="gnome-terminal"] 1
+assign [class="Firefox"] 3
+assign [class="Inkscape"] 5
+assign [class="Telegram"] 2
+
+# Applications à démarrer avec i3 (ce sont des exemples persos, vous mettez bien ce que 
+# vous voulez ;):
+exec /usr/bin/nm-applet
+exec /usr/bin/volumeicon
+exec sh /home/user/.screenlayout/i3.sh
+exec clipit
+#exec /usr/bin/feh --bg-scale Images/Wallpapers/i3-blanc.png
+exec /usr/bin/feh --bg-scale ~/.config/i3/gotham-01.jpg
+
+
+# Modification des couleurs de la fenêtre ayant le focus:
+# class	       	   bordure	fond	texte	indicateur
+client.focused	   #FF00FF	#111111	#00FF00	#FF00FF
+
+# Il est possible de définir des raccourcis d'applications de 2 façons: bindsym renvoie au 
+# symbole de la touche (ça peut être aléatoire selon la disposition du clavier); bindcode 
+# renvoie au code de la touche obtenu via l'utilitaire de test d'évenements xev", c'est 
+# donc une méthode préférable pour les touches particulières:
+
+# Définition des raccourcis d'applications (avec bindsym)
+#bindsym $mod+$alt+g exec gimp
+bindsym $mod+$alt+m exec icedove
+bindsym $mod+$alt+i exec iceweasel
+bindsym $mod+$alt+z exec sakura -x mocp
+bindsym $mod+$alt+r exec sakura -x ranger
+bindsym $mod+$alt+e exec sakura -x emacs
+bindsym $mod+$alt+a exec xfe
+bindsym $mod+p	    exec sh /home/sogal/.script/dmenu.sh
+bindsym $alt+p	    exec sh /home/sogal/.script/dossier.sh
+
+# Définition des raccourcis d'applications (avec bindcode)
+bindcode 122 exec amixer -q set Master 5dB- unmute
+bindcode 123 exec amixer -q set Master 5dB+ unmute
+#bindcode 78  exec i3lock 
+#bindcode 220 exec sakura -x finch
+#bindcode 173 exec mocp --previous
+#bindcode 172 exec mocp --next
+bindcode 172 exec mocp --toggle-pause
+bindcode 107 exec scrot
+bindcode Control+$alt+119 exec sh /home/sogal/.script/arret.sh
+
+# Raccourcis des mouvements entre espaces grâce aux touches fléchées
+bindsym $mod+$alt+Left workspace prev
+bindsym $mod+$alt+Right workspace next
+
+# Raccourci pour alterner entre les modes de bordures (normale, 1 pixel ou aucune)
+bindsym $mod+b border toggle
+
+# Vérouillez écran avec une image en fond (image .png avec une largeur importante)
+bindsym $mod+a exec i3lock -i /home/zghost/.config/i3/image11.png -n -d -f
+
