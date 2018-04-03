@@ -255,6 +255,7 @@ bindsym $mod+$alt+Right workspace next
 # Raccourci pour alterner entre les modes de bordures (normale, 1 pixel ou aucune)
 bindsym $mod+b border toggle
 
-# Vérouillez écran avec une image en fond (image .png avec une largeur importante)
-bindsym $mod+a exec i3lock -i /home/zghost/.config/i3/image11.png -n -d -f
+# Vérouillez écran avec une image en fond (image .png avec une largeur importante, 
+# en fonction de la résolution de votre écran)==> le paquet i3lock doit être installé.
+bindsym $mod+a exec i3lock -i ~/papierspeints/image11.png -n -d -f
 
