@@ -202,18 +202,19 @@ new_window 1pixel
 new_float normal
 
 # Assignation des logiciels à un espace:
+# Il ne s'agit que d'exemples... à ajuster selon votre convenance
 assign [class="gnome-terminal"] 1
 assign [class="Firefox"] 3
 assign [class="Inkscape"] 5
 assign [class="Telegram"] 2
 
-# Applications à démarrer avec i3 (ce sont des exemples persos, vous mettez bien ce que 
-# vous voulez ;):
+# Applications à démarrer avec i3
+# Il ne s'agit que d'exemples... à ajuster selon votre convenance
 exec /usr/bin/nm-applet
 exec /usr/bin/volumeicon
 exec sh /home/user/.screenlayout/i3.sh
 exec clipit
-#exec /usr/bin/feh --bg-scale Images/Wallpapers/i3-blanc.png
+# Mettre une image en fond d'écran avec l'application FEH (paquet feh à installer)
 exec /usr/bin/feh --bg-scale ~/.config/i3/gotham-01.jpg
 
 
@@ -227,26 +228,18 @@ client.focused	   #FF00FF	#111111	#00FF00	#FF00FF
 # donc une méthode préférable pour les touches particulières:
 
 # Définition des raccourcis d'applications (avec bindsym)
+# Il ne s'agit que d'exemples... à ajuster selon votre convenance
 #bindsym $mod+$alt+g exec gimp
 bindsym $mod+$alt+m exec icedove
-bindsym $mod+$alt+i exec iceweasel
-bindsym $mod+$alt+z exec sakura -x mocp
-bindsym $mod+$alt+r exec sakura -x ranger
-bindsym $mod+$alt+e exec sakura -x emacs
-bindsym $mod+$alt+a exec xfe
-bindsym $mod+p	    exec sh /home/sogal/.script/dmenu.sh
-bindsym $alt+p	    exec sh /home/sogal/.script/dossier.sh
 
 # Définition des raccourcis d'applications (avec bindcode)
+# Il ne s'agit que d'exemples... à ajuster selon votre convenance
 bindcode 122 exec amixer -q set Master 5dB- unmute
 bindcode 123 exec amixer -q set Master 5dB+ unmute
-#bindcode 78  exec i3lock 
-#bindcode 220 exec sakura -x finch
-#bindcode 173 exec mocp --previous
-#bindcode 172 exec mocp --next
+bindcode 173 exec mocp --previous
+bindcode 172 exec mocp --next
 bindcode 172 exec mocp --toggle-pause
 bindcode 107 exec scrot
-bindcode Control+$alt+119 exec sh /home/sogal/.script/arret.sh
 
 # Raccourcis des mouvements entre espaces grâce aux touches fléchées
 bindsym $mod+$alt+Left workspace prev
